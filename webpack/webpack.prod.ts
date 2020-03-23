@@ -1,7 +1,5 @@
 import merge from 'webpack-merge';
 import { getCommonConfig } from './webpack.common';
-import OptimizeCSSAssetsPlugin from 'optimize-css-assets-webpack-plugin';
-import TerserJSPlugin from 'terser-webpack-plugin';
 import MiniCssExtractPlugin from 'mini-css-extract-plugin';
 import webpack from 'webpack';
 import { join, resolve } from 'path';
@@ -12,7 +10,19 @@ const prodConfig: webpack.Configuration = {
         index: join(resolve('src'), '../index.ts'),
     },
     optimization: {
-        minimizer: [new TerserJSPlugin({}), new OptimizeCSSAssetsPlugin({})],
+        minimize: false,
+        occurrenceOrder: true,
+        namedModules: true,
+        namedChunks: true,
+        splitChunks: {
+          minSize: 200 * 1024 * 1024,
+        },
+        removeAvailableModules: true,
+        mergeDuplicateChunks: true,
+        providedExports: true,
+        usedExports: true,
+        concatenateModules: true,
+
     },
     module: {
         rules: [

@@ -7,7 +7,7 @@ export function compress(file: File): Promise<File> {
         reader.readAsDataURL(file);
         reader.onload = event => {
             const img = new Image();
-            img.src = event.target.result;
+            img.src = event.target.result as string;
             img.onload = () => {
                 const { width, height } = calculateAspectRatioFit(img.width, img.height, maxWidth, maxHeight);
                 const elem = document.createElement('canvas');

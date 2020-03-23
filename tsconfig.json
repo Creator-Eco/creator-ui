@@ -4,20 +4,25 @@
       "es2018",
       "dom"
     ],
-    "outDir": "lib",
     "sourceMap": true,
-    "declaration": true,
-    "target": "esnext",
     "module": "esnext",
+    "target": "es6",
     "jsx": "preserve",
     "moduleResolution": "node",
-    "strict": true,
     "noEmit": true,
     "allowJs": true,
     "skipLibCheck": true,
     "isolatedModules": true,
     "esModuleInterop": true,
+    "forceConsistentCasingInFileNames": true,
+    "allowSyntheticDefaultImports": true,
+    "declaration": true,
+    "declarationDir": "dist/types",
+    "outDir": "dist/esm5",
     "baseUrl": "./",
+    "typeRoots": [
+      "node_modules/@types"
+    ],
     "paths": {
       "@src/*": [
         "./src/*"
@@ -26,6 +31,6 @@
   },
   "include": [
     "src",
-    "webpack"
+    // "webpack"
   ]
 }

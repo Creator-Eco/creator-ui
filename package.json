@@ -7,7 +7,8 @@
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "clean-dist": "rimraf dist/*",
-    "build": "cross-env TS_NODE_PROJECT=\"./webpack/tsconfig-for-webpack-config.json\" webpack -p --config=webpack/webpack.prod.ts"
+    "build": "cross-env TS_NODE_PROJECT=\"./webpack/tsconfig-for-webpack-config.json\" webpack -p --config=webpack/webpack.prod.ts",
+    "build-es6": "tsc && tsc --target es2018 --outDir dist/es6"
   },
   "repository": {
     "type": "git",
