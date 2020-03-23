@@ -26,7 +26,7 @@ export default function useForm<T>(initialValues: T): UseForm<T> {
         _setValues(values);
     }
 
-    function setValue(fieldName: keyof T, value: ValueOf<T>): void {
+    function setValue(fieldName: any, value: any): void {
         setValues({
             ...values,
             [fieldName]: value

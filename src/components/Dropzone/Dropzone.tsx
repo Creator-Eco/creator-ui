@@ -49,13 +49,12 @@ const Dropzone: FC<DropzoneProps> = props => {
         onFile(base64);
     }
 
-
     function convertFileToBase64(file: File): Promise<string> {
         return new Promise((resolve, reject) => {
             const reader = new FileReader();
 
-            reader.onloadend = (e) => {
-                resolve(e.target.result);
+            reader.onloadend = (e: Event) => {
+                resolve(reader.result as string);
             };
             reader.onerror = (e) => {
                 reject(e.target.error);

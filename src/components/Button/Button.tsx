@@ -45,7 +45,7 @@ const Button: FC<ButtonProps> = props => {
         return <Spinner styles={{ base: spinnerBase }} />;
     }
 
-    function onClick(e: MouseEvent): void {
+    function onClick(e): void {
         const { onClick = noop, isDisabled, isLoading } = props;
         if (isDisabled || isLoading) return;
 
