@@ -15,7 +15,7 @@ const prodConfig: webpack.Configuration = {
         namedModules: true,
         namedChunks: true,
         splitChunks: {
-          minSize: 200 * 1024 * 1024,
+            minSize: 200 * 1024 * 1024,
         },
         removeAvailableModules: true,
         mergeDuplicateChunks: true,
@@ -26,6 +26,12 @@ const prodConfig: webpack.Configuration = {
     },
     module: {
         rules: [
+            {
+                enforce: 'pre',
+                test: /\.tsx?$/,
+                exclude: [/\/node_modules\//],
+                use: ['awesome-typescript-loader', 'source-map-loader']
+            },
             {
                 test: /\.css$/,
                 exclude: /node_modules/,

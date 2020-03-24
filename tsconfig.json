@@ -24,13 +24,19 @@
       "node_modules/@types"
     ],
     "paths": {
+      "antd": ["components/index.tsx"],
+      "antd/es/*": ["components/*"]
+    },
+
+    "paths": {
+
       "@src/*": [
         "./src/*"
       ]
     }
   },
   "include": [
-    "src",
+    "src"
     // "webpack"
   ]
 }

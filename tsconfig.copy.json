@@ -1,0 +1,35 @@
+{
+  "compilerOptions": {
+    "target": "es6",
+    "module": "esnext",
+    "jsx": "preserve",
+    "moduleResolution": "node",
+    "allowJs": true,
+    "noEmit": true,
+    "sourceMap": true,
+    "experimentalDecorators": true,
+    "outDir": "dist",
+    "lib": [
+      "es2018",
+      "dom"
+    ],
+    "skipLibCheck": true,
+    "noImplicitAny": true,
+    "suppressImplicitAnyIndexErrors": true,
+    "allowSyntheticDefaultImports": true,
+    "forceConsistentCasingInFileNames": true,
+    "removeComments": true,
+    "esModuleInterop": true,
+    "declaration": true,
+    "declarationDir": "dist/types",
+  },
+  "baseUrl": "./",
+  "typeRoots": [
+    "node_modules/@types"
+  ],
+  "paths": {
+    "@src/*": ["./src/*"]
+  },
+  "include": ["src"], // "webpack"
+  "exclude": ["node_modules", "dist"]
+}
